@@ -42,11 +42,11 @@ done
 %install
 for kernel_version in %{?kernel_versions}; do
  mkdir -p %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/
- install -D -m 755 _kmod_build_${kernel_version%%___*}/bmi323_core.ko %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/
+ install -D -m 755 _kmod_build_${kernel_version%%___*}/bmi160_core.ko %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/
  chmod a+x %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/bmi160_core.ko
-install -D -m 755 _kmod_build_${kernel_version%%___*}/bmi323_i2c.ko %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/
+install -D -m 755 _kmod_build_${kernel_version%%___*}/bmi160_i2c.ko %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/
  chmod a+x %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/bmi160_i2c.ko
-install -D -m 755 _kmod_build_${kernel_version%%___*}/bmi323_spi.ko %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/
+install -D -m 755 _kmod_build_${kernel_version%%___*}/bmi160_spi.ko %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/
  chmod a+x %{buildroot}%{kmodinstdir_prefix}/${kernel_version%%___*}/%{kmodinstdir_postfix}/bmi160_spi.ko
 done
 %{?akmod_install}

@@ -884,7 +884,7 @@ int bmi160_core_probe(struct device *dev, struct regmap *regmap,
 
 	return devm_iio_device_register(dev, indio_dev);
 }
-EXPORT_SYMBOL_NS_GPL(bmi160_core_probe, IIO_BMI160);
+EXPORT_SYMBOL_NS_GPL(bmi160_core_probe, "IIO_BMI160");
 
 MODULE_AUTHOR("Daniel Baluta <daniel.baluta@intel.com>");
 MODULE_DESCRIPTION("Bosch BMI160 driver");
